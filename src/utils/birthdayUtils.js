@@ -1,16 +1,18 @@
 // src/utils/birthdayUtils.js
-// 9202204720082
 const calculateBirthdate = (idNumber) => {
-  // Implement the logic to extract birthdate from ID number
-  // This will depend on the specific format of ID numbers in your region
-  // For simplicity, let's assume the first 6 digits represent the birthdate in the format YYMMDD
-  const year = idNumber.substring(0, 2);
-  const month = idNumber.substring(2, 4);
-  const day = idNumber.substring(4, 6);
-  const fullYear =
-    new Date().getFullYear() -
-    (parseInt(year) > new Date().getFullYear() - 2000 ? 100 : 0);
-  return new Date(`${fullYear}-${month}-${day}`);
+  // Extracting birthdate from South African ID number (YYMMDD format)
+  const year = parseInt(idNumber.substring(0, 2));
+  const month = parseInt(idNumber.substring(2, 4));
+  const day = parseInt(idNumber.substring(4, 6));
+
+  // Adjusting the year based on the current date
+  const currentYear = new Date().getFullYear();
+  const fullYear = year + (year < currentYear % 100 ? 2000 : 1900);
+
+  const calculatedBirthdate = new Date(fullYear, month - 1, day);
+  console.log("Calculated Birthdate:", calculatedBirthdate); // Add this line
+
+  return calculatedBirthdate;
 };
 
 export { calculateBirthdate };

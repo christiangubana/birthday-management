@@ -7,9 +7,13 @@ const AddMemberForm = ({ onAddMember }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddMember({ firstName, idNumber });
-    setFirstName("");
-    setIdNumber("");
+    // Make sure both firstName and idNumber are provided before calling onAddMember
+    if (firstName && idNumber) {
+      onAddMember({ firstName, idNumber });
+      setFirstName("");
+      setIdNumber("");
+    }
+    console.log(firstName, idNumber);
   };
 
   return (
