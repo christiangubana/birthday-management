@@ -42,7 +42,18 @@ const UpcomingBirthdays = ({ upcomingBirthdays }) => {
               Turning {calculateAge(member.birthdate) + 1} years old
             </p>
             <p className="text-center text-gray-500 text-sm">
-              Birthdate: {new Date(member.birthdate).toLocaleDateString()}
+              Birthdate:{" "}
+              {new Intl.DateTimeFormat("en-US", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+              }).format(
+                new Date(
+                  new Date().getFullYear(),
+                  member.birthdate.getMonth(),
+                  member.birthdate.getDate()
+                )
+              )}
             </p>
           </div>
         ))}
