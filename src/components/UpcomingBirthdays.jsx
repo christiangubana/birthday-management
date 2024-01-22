@@ -18,7 +18,7 @@ const calculateAge = (birthdate) => {
 };
 
 const UpcomingBirthdays = ({ upcomingBirthdays }) => {
-  console.log(upcomingBirthdays); // Add this line
+  console.log("upcomingBirthdays =>", upcomingBirthdays);
   return (
     <div className="mt-8">
       <h2 className="text-2xl font-bold mb-4">
@@ -36,7 +36,7 @@ const UpcomingBirthdays = ({ upcomingBirthdays }) => {
               className="w-20 h-20 object-cover rounded-full mx-auto mb-4"
             />
             <p className="text-center font-bold text-xl mb-2">
-              {member.firstName}
+              Name: {member.firstName}
             </p>
             <p className="text-center text-gray-500 text-sm mb-2">
               Turning {calculateAge(member.birthdate) + 1} years old

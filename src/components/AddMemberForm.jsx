@@ -13,7 +13,7 @@ const AddMemberForm = ({ onAddMember }) => {
       setFirstName("");
       setIdNumber("");
     }
-    console.log(firstName, idNumber);
+    console.log("FirstName & ID =>", firstName, idNumber);
   };
 
   return (

@@ -7,10 +7,11 @@ const calculateBirthdate = (idNumber) => {
 
   // Adjusting the year based on the current date
   const currentYear = new Date().getFullYear();
-  const fullYear = year + (year < currentYear % 100 ? 2000 : 1900);
+  const centuryPrefix = Math.floor(currentYear / 100); // Get the century prefix
+  const fullYear = centuryPrefix * 100 + year;
 
   const calculatedBirthdate = new Date(fullYear, month - 1, day);
-  console.log("Calculated Birthdate:", calculatedBirthdate); // Add this line
+  console.log(`calculatedBirthdate => ${calculatedBirthdate}`);
 
   return calculatedBirthdate;
 };
