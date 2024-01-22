@@ -35,7 +35,7 @@ const UpcomingBirthdays = ({ upcomingBirthdays }) => {
               alt={`${member.firstName}'s profile`}
               className="w-20 h-20 object-cover rounded-full mx-auto mb-4"
             />
-            <p className="text-center font-bold text-xl mb-2">
+            <p className="text-center text-gray-500 font-bold text-xl mb-2">
               Name: {member.firstName}
             </p>
             <p className="text-center text-gray-500 text-sm mb-2">
