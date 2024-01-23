@@ -12,9 +12,6 @@ const calculateBirthdate = (idNumber) => {
 
   // Adjust the day without adding extra day
   calculatedBirthdate.setDate(day);
-
-  console.log(`calculatedBirthdate => ${calculatedBirthdate}`);
-
   return calculatedBirthdate;
 };
 
