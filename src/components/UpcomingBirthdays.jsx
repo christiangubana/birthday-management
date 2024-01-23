@@ -18,7 +18,6 @@ const calculateAge = (birthdate) => {
 };
 
 const UpcomingBirthdays = ({ upcomingBirthdays }) => {
-  console.log("upcomingBirthdays =>", upcomingBirthdays);
   return (
     <div className="mt-8">
       <h2 className="text-2xl font-bold mb-4">
@@ -58,6 +57,10 @@ const UpcomingBirthdays = ({ upcomingBirthdays }) => {
           </div>
         ))}
       </div>
+      {/* {upcomingBirthdays.upcomingWithin7Days.length === 0 &&
+        upcomingBirthdays.upcomingAll.length === 0 && (
+          <p>No upcoming birthdays.</p>
+        )} */}
     </div>
   );
 };
