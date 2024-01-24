@@ -6,48 +6,56 @@ import UpcomingBirthdays from "./components/UpcomingBirthdays";
 import { calculateBirthdate } from "./utils/birthdayUtils";
 
 const App = () => {
-  const [teamMembers, setTeamMembers] = useState([]);
+  // Load teamMembers from localStorage on initial render
+  const [teamMembers, setTeamMembers] = useState(() => {
+    const storedTeamMembers =
+      JSON.parse(localStorage.getItem("teamMembers")) || [];
+
+    // Parse the birthdate strings back into Date objects
+    const parsedTeamMembers = storedTeamMembers.map((member) => ({
+      ...member,
+      birthdate: new Date(member.birthdate),
+    }));
+
+    return parsedTeamMembers;
+  });
+
+  // Update localStorage whenever teamMembers changes
+  useEffect(() => {
+    localStorage.setItem("teamMembers", JSON.stringify(teamMembers));
+  }, [teamMembers]);
 
   const handleAddMember = (newMember) => {
     const birthdate = calculateBirthdate(newMember.idNumber);
-    setTeamMembers((prevMembers) => {
-      const updatedMembers = [
-        ...prevMembers,
-        { ...newMember, birthdate, id: uuidv4() },
-      ];
-      return updatedMembers;
-    });
+    setTeamMembers((prevMembers) => [
+      ...prevMembers,
+      { ...newMember, birthdate, id: uuidv4() },
+    ]);
+  };
+
+  const handleDeleteMember = (uuid) => {
+    setTeamMembers((prevMembers) =>
+      prevMembers.filter((member) => member.id !== uuid)
+    );
   };
 
   const getUpcomingBirthdays = () => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0); // Set time to midnight
-    const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
-
-    // Filter members for upcoming birthdays within the next 7 days
-    teamMembers.filter((member) => {
+    // Filter members for upcoming birthdays
+    return teamMembers.filter((member) => {
       const memberBirthdate = new Date(member.birthdate);
       memberBirthdate.setHours(0, 0, 0, 0); // Set time to midnight
-      return memberBirthdate > today && memberBirthdate <= nextWeek;
+      return memberBirthdate;
     });
-    // Filter members for all upcoming birthdays
-    teamMembers.filter((member) => {
-      const memberBirthdate = new Date(member.birthdate);
-      memberBirthdate.setHours(0, 0, 0, 0); // Set time to midnight
-      return memberBirthdate > today;
-    });
-
-    // const upcomingWithin7Days = [...teamMembers];
-    // const upcomingAll = [...teamMembers];
-    // console.log(upcomingWithin7Days);
-    return teamMembers;
   };
 
   return (
     <div>
       <h1>Birthday Manager App</h1>
       <AddMemberForm onAddMember={handleAddMember} />
-      <UpcomingBirthdays upcomingBirthdays={getUpcomingBirthdays()} />
+      <UpcomingBirthdays
+        upcomingBirthdays={getUpcomingBirthdays()}
+        onDeleteMember={handleDeleteMember}
+      />
     </div>
   );
 };

@@ -26,7 +26,7 @@ const isBirthdayComingUp = (birthdate) => {
   return birthdateObj >= today && birthdateObj <= sevenDaysLater;
 };
 
-const UpcomingBirthdays = ({ upcomingBirthdays }) => {
+const UpcomingBirthdays = ({ upcomingBirthdays, onDeleteMember }) => {
   const upcomingBirthdaysWithin7Days = upcomingBirthdays.filter((member) =>
     isBirthdayComingUp(member.birthdate)
   );
@@ -70,6 +70,12 @@ const UpcomingBirthdays = ({ upcomingBirthdays }) => {
                     )
                   )}
                 </p>
+                <button
+                  className="text-red-500 hover:text-red-700 cursor-pointer"
+                  onClick={() => onDeleteMember(member.id)}
+                >
+                  Delete
+                </button>
               </div>
             ))}
           </div>
@@ -113,6 +119,12 @@ const UpcomingBirthdays = ({ upcomingBirthdays }) => {
                     )
                   )}
                 </p>
+                <button
+                  className="text-red-500 hover:text-red-700 cursor-pointer"
+                  onClick={() => onDeleteMember(member.id)}
+                >
+                  Delete
+                </button>
               </div>
             ))}
           </div>
