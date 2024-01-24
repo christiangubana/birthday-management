@@ -118,6 +118,7 @@ const UpcomingBirthdays = ({ upcomingBirthdays, onDeleteMember }) => {
                       member.birthdate.getDate()
                     )
                   )}
+                  🎉
                 </p>
                 <button
                   className="text-red-500 hover:text-red-700 cursor-pointer"

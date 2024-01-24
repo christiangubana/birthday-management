@@ -4,6 +4,7 @@ const AddMemberForm = ({ onAddMember }) => {
   const [firstName, setFirstName] = useState("");
   const [idNumber, setIdNumber] = useState("");
   const [idError, setIdError] = useState("");
+  const [nameError, setNameError] = useState("");
 
   const validateIDNumber = (id) => {
     // Validate South African ID Number using a regular expression
@@ -12,17 +13,41 @@ const AddMemberForm = ({ onAddMember }) => {
     return idRegex.test(id);
   };
 
+  const validateFirstName = (name) => {
+    // Validate if the name contains at least one alphabetical character
+    const nameRegex = /[a-zA-Z]/;
+
+    return nameRegex.test(name);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Validate the input before calling onAddMember
-    if (firstName.length <= 12 && validateIDNumber(idNumber)) {
+    if (
+      firstName.length <= 12 &&
+      validateIDNumber(idNumber) &&
+      validateFirstName(firstName)
+    ) {
       onAddMember({ firstName, idNumber });
       setFirstName("");
       setIdNumber("");
       setIdError("");
+      setNameError("");
     } else {
-      setIdError("Invalid SA ID Number");
+      if (firstName.length > 12) {
+        setNameError("First Name cannot be longer than 12 characters");
+      } else if (!validateFirstName(firstName)) {
+        setNameError("First Name must contain alphabetical letters");
+      } else {
+        setNameError("");
+      }
+
+      if (!validateIDNumber(idNumber)) {
+        setIdError("Invalid ID Number");
+      } else {
+        setIdError("");
+      }
     }
   };
 
@@ -36,16 +61,14 @@ const AddMemberForm = ({ onAddMember }) => {
           First Name:
         </label>
         <input
-          className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+          className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500 ${
+            nameError && "border-red-500"
+          }`}
           type="text"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
-        {firstName.length > 12 && (
-          <p className="text-red-500">
-            First Name cannot be longer than 12 characters
-          </p>
-        )}
+        {nameError && <p className="text-red-500">{nameError}</p>}
       </div>
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2">

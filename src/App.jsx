@@ -4,6 +4,8 @@ import "./App.css";
 import AddMemberForm from "./components/AddMemberForm";
 import UpcomingBirthdays from "./components/UpcomingBirthdays";
 import { calculateBirthdate } from "./utils/birthdayUtils";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 const App = () => {
   // Load teamMembers from localStorage on initial render
@@ -49,13 +51,17 @@ const App = () => {
   };
 
   return (
-    <div>
-      <h1>Birthday Manager App</h1>
-      <AddMemberForm onAddMember={handleAddMember} />
-      <UpcomingBirthdays
-        upcomingBirthdays={getUpcomingBirthdays()}
-        onDeleteMember={handleDeleteMember}
-      />
+    <div className="flex flex-col min-h-screen">
+      <Header />
+      <main className="app-content">
+        <h1 className="text-xl font-bold mb-4">Birthday Manager App</h1>
+        <AddMemberForm onAddMember={handleAddMember} />
+        <UpcomingBirthdays
+          upcomingBirthdays={getUpcomingBirthdays()}
+          onDeleteMember={handleDeleteMember}
+        />
+      </main>
+      <Footer />
     </div>
   );
 };
