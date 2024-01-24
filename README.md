@@ -1,11 +1,70 @@
-# React + Vite
+# React + Vite - Birthday Management
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple application that allows capturing the first name and ID number of team members, and then be able to see a list of birthdays in the next 7 days. You don't have to add an actual birthdate as this can be calculated from the ID number. You also should not need to take any manual steps to see the team members' birthday show up next year as well.
 
-Currently, two official plugins are available:
+Find Live Demo of the application below:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Live Demo [Here](https://christiangubana.github.io/birthday-management/)
 
-<!-- 9202254720082 -->
-<!-- 9201224720082 -->
+## How To Use on your local machine
+
+1. Clone this repoistory and clone it to your local machine.
+
+```bash
+$ git clone https://github.com/christiangubana/birthday-management.git
+```
+
+2. Go into the repository
+
+```bash
+$ cd birthday-management
+```
+
+3. Install dependencies
+
+```bash
+$ yarn
+```
+
+5. Start your development server
+
+```bash
+$ yarn run dev
+```
+
+Runs the app in the development mode.\
+Open [http://localhost:5173/birthday-management/](http://localhost:5173/birthday-management/) to view it in your browser.
+
+## Design Explanation
+
+I have programmed my solution following object oriented and functional programming structure. <br/>
+I built the app to the best of my ability, I however believe that there are things to learn and to improve.
+Also, as developer, we learn eveyday, any feedback will help me improve my skills and this solution in the future.
+
+The project consist of:
+
+1 Code (under src/component you'll find)
+
+- AddMemberForm component
+- Description component
+- Footer component
+- Header component
+- UpcomingBirthday component
+
+2 Code (under src/utils you'll find)
+
+- birthdayUtils file
+
+## Tool used
+
+Language: JavaScript
+Library: Vite + React.Js
+CSS Library: TailwindCSS
+
+IDE: Visual Studio
+
+OS: Windows 11 Pro 64-bit
+
+## Thanks
+
+Thank you very much for your time and consideration, and have a terric day.
