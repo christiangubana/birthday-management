@@ -6,6 +6,7 @@ import UpcomingBirthdays from "./components/UpcomingBirthdays";
 import { calculateBirthdate } from "./utils/birthdayUtils";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Description from "./components/Description";
 
 const App = () => {
   // Load teamMembers from localStorage on initial render
@@ -54,6 +55,7 @@ const App = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="app-content">
+        <Description />
         <h1 className="text-xl font-bold mb-4">Birthday Manager App</h1>
         <AddMemberForm onAddMember={handleAddMember} />
         <UpcomingBirthdays

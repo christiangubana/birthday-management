@@ -8,15 +8,14 @@ const AddMemberForm = ({ onAddMember }) => {
 
   const validateIDNumber = (id) => {
     // Validate South African ID Number using a regular expression
-    const idRegex = /^[0-9]{13}$/;
-
+    const idRegex =
+      /^(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))/;
     return idRegex.test(id);
   };
 
   const validateFirstName = (name) => {
     // Validate if the name contains at least one alphabetical character
     const nameRegex = /[a-zA-Z]/;
-
     return nameRegex.test(name);
   };
 
@@ -56,8 +55,8 @@ const AddMemberForm = ({ onAddMember }) => {
       onSubmit={handleSubmit}
       className="max-w-md mx-auto mt-8 p-6 bg-white rounded-md shadow-md"
     >
-      <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
+      <div className="mb-6">
+        <label className="block text-sm font-semibold text-gray-600 mb-1">
           First Name:
         </label>
         <input
@@ -68,10 +67,10 @@ const AddMemberForm = ({ onAddMember }) => {
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
-        {nameError && <p className="text-red-500">{nameError}</p>}
+        {nameError && <p className="text-red-500 mt-2">{nameError}</p>}
       </div>
-      <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
+      <div className="mb-6">
+        <label className="block text-sm font-semibold text-gray-600 mb-1">
           ID Number:
         </label>
         <input
@@ -82,7 +81,7 @@ const AddMemberForm = ({ onAddMember }) => {
           value={idNumber}
           onChange={(e) => setIdNumber(e.target.value)}
         />
-        {idError && <p className="text-red-500">{idError}</p>}
+        {idError && <p className="text-red-500 mt-2">{idError}</p>}
       </div>
       <button
         type="submit"
