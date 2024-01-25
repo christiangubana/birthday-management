@@ -6,6 +6,13 @@ Find Live Demo of the application below:
 
 - Live Demo [Here](https://christiangubana.github.io/birthday-management/)
 
+<p align="center">
+  <kbd>
+    <img src="https://github.com/christiangubana/birthday-management/blob/main/src/assets/images/image.png
+"></img>
+  </kbd>
+</p>
+
 ## How To Use on your local machine
 
 1. Clone this repoistory and clone it to your local machine.
