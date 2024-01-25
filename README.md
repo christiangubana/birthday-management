@@ -1,4 +1,4 @@
-# React + Vite - Birthday Management
+# React + Vite - Birthday Management App
 
 A simple application that allows capturing the first name and ID number of team members, and then be able to see a list of birthdays in the next 7 days. You don't have to add an actual birthdate as this can be calculated from the ID number. You also should not need to take any manual steps to see the team members' birthday show up next year as well.
 
@@ -15,7 +15,7 @@ Find Live Demo of the application below:
 
 ## How To Use on your local machine
 
-1. Clone this repoistory and clone it to your local machine.
+1. Clone this repository and clone it to your local machine.
 
 ```bash
 $ git clone https://github.com/christiangubana/birthday-management.git
