@@ -5,10 +5,8 @@ A simple application that allows capturing the first name and ID number of team 
 Find Live Demo of the application below:
 
 - Live Demo [Here](https://christiangubana.github.io/birthday-management/)
-  
 
-  ![Alt text](https://github.com/christiangubana/birthday-management/blob/main/src/assets/images/image.png)
-
+  [![Alt text](https://github.com/christiangubana/birthday-management/blob/main/src/assets/images/image.png)](https://christiangubana.github.io/birthday-management/)
 
 ## How To Use on your local machine
 
