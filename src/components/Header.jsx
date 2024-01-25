@@ -8,6 +8,13 @@ const Header = () => {
         <div>
           <h1 className="text-2xl font-bold">Riivo</h1>
         </div>
+        <nav className="hidden sm:flex space-x-4">
+          <nav className="hidden sm:flex space-x-4">
+            <h1 className="text-2xl font-bold hover:text-gray-300">
+              Birthday Manager
+            </h1>
+          </nav>
+        </nav>
       </div>
     </header>
   );

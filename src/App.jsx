@@ -56,7 +56,9 @@ const App = () => {
       <Header />
       <main className="app-content">
         <Description />
-        <h1 className="text-xl font-bold mb-4">Birthday Manager App</h1>
+        <h1 className="text-2xl font-bold hover:text-gray-300">
+          Start Adding Your Team
+        </h1>
         <AddMemberForm onAddMember={handleAddMember} />
         <UpcomingBirthdays
           upcomingBirthdays={getUpcomingBirthdays()}
