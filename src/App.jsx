@@ -57,7 +57,7 @@ const App = () => {
       <main className="app-content">
         <Description />
         <h1 className="text-2xl font-bold hover:text-gray-300">
-          Start Adding Your Team
+          Add your team
         </h1>
         <AddMemberForm onAddMember={handleAddMember} />
         <UpcomingBirthdays
