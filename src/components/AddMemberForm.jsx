@@ -49,47 +49,51 @@ const AddMemberForm = ({ onAddMember }) => {
       }
     }
   };
-
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-md mx-auto mt-8 p-6 bg-white rounded-md shadow-md"
-    >
-      <div className="mb-6">
-        <label className="block text-sm font-semibold text-gray-600 mb-1">
-          First Name:
-        </label>
-        <input
-          className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500 ${
-            nameError && "border-red-500"
-          }`}
-          type="text"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        {nameError && <p className="text-red-500 mt-2">{nameError}</p>}
-      </div>
-      <div className="mb-6">
-        <label className="block text-sm font-semibold text-gray-600 mb-1">
-          ID Number:
-        </label>
-        <input
-          className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500 ${
-            idError && "border-red-500"
-          }`}
-          type="text"
-          value={idNumber}
-          onChange={(e) => setIdNumber(e.target.value)}
-        />
-        {idError && <p className="text-red-500 mt-2">{idError}</p>}
-      </div>
-      <button
-        type="submit"
-        className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
+    <div className="">
+      <form
+        onSubmit={handleSubmit}
+        className="max-w-md mx-auto mt-8 p-6 bg-white rounded-md shadow-md"
       >
-        Add Member
-      </button>
-    </form>
+        <div className="mb-6">
+          <label className="block text-xm font-semibold text-gray-600 mb-1">
+            First Name:
+          </label>
+          <input
+            className={`w-full px-4 py-2 border bg-gray-700 rounded-md focus:outline-none focus:border-none placeholder:text-gray-500 placeholder:text-xs placeholder:italic ${
+              nameError && "border-red-500"
+            }`}
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            placeholder="please type your first name"
+          />
+          {nameError && <p className="text-red-500 mt-2">{nameError}</p>}
+        </div>
+        <div className="mb-6">
+          <label className="block text-sm font-semibold text-gray-600 mb-1">
+            ID Number:
+          </label>
+
+          <input
+            className={`w-full px-4 py-2 border bg-gray-700 rounded-md focus:outline-none focus:border-none placeholder:text-gray-500 placeholder:text-xs placeholder:italic ${
+              idError && "border-red-500"
+            }`}
+            type="text"
+            value={idNumber}
+            onChange={(e) => setIdNumber(e.target.value)}
+            placeholder="please type your id number"
+          />
+          {idError && <p className="text-red-500 mt-2">{idError}</p>}
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
+        >
+          Add Member
+        </button>
+      </form>
+    </div>
   );
 };
 
