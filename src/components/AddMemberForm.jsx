@@ -61,7 +61,7 @@ const AddMemberForm = ({ onAddMember }) => {
             First Name:
           </label>
           <input
-            className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:border-none placeholder:text-gray-500 placeholder:text-xs placeholder:italic ${
+            className={`w-full px-4 py-2 border bg-gray-700 rounded-md focus:outline-none focus:border-none placeholder:text-gray-500 placeholder:text-xs placeholder:italic ${
               nameError && "border-red-500"
             }`}
             type="text"
@@ -77,7 +77,7 @@ const AddMemberForm = ({ onAddMember }) => {
           </label>
 
           <input
-            className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:border-none placeholder:text-gray-500 placeholder:text-xs placeholder:italic ${
+            className={`w-full px-4 py-2 border bg-gray-700 rounded-md focus:outline-none focus:border-none placeholder:text-gray-500 placeholder:text-xs placeholder:italic ${
               idError && "border-red-500"
             }`}
             type="text"
