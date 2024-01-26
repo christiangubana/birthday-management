@@ -63,10 +63,10 @@ const Description = () => {
             </div>
             <div className="p-4 md:p-5 space-y-4">
               <p className="text-xs leading-relaxed text-gray-500 dark:text-gray-400">
-                This is a web application that list of upcoming birthdays in the
-                next 7 days automatically calculated from member ID number. You
-                also should not need to take any manual steps to see the team
-                members' birthday show up next year as well.
+                This is a web application that lists upcoming birthdays in the
+                next 7 days automatically calculated from a member ID number.
+                You also should not need to take any manual steps to see the
+                team members' birthday show up next year as well.
               </p>
             </div>
             <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
