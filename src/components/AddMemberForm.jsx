@@ -49,7 +49,6 @@ const AddMemberForm = ({ onAddMember }) => {
       }
     }
   };
-
   return (
     <div className="">
       <form
